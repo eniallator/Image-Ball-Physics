@@ -1,11 +1,11 @@
-const numBalls = 100;
+const numBalls = 500;
 const ballRadius = 5;
 const ballSpeed = 0.1;
 const friction = 0.05;
 const minVelocity = 0.1;
 const maxWait = 2000;
 const imageURL =
-  "https://raw.githubusercontent.com/aoifecoleman/the-the/master/bearing.png";
+  "https://images.theconversation.com/files/18232/original/dqpgdxyk-1354493195.jpg?ixlib=rb-1.1.0&rect=0%2C21%2C1440%2C700&q=45&auto=format&w=1356&h=668&fit=crop";
 
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
@@ -73,11 +73,13 @@ function run() {
     };
 
     ball.vel.x +=
-      getBrightness(imgCoords.x, imgCoords.y) -
-      getBrightness(imgCoords.x + 1, imgCoords.y);
+      ballSpeed *
+      (getBrightness(imgCoords.x, imgCoords.y) -
+        getBrightness(imgCoords.x + 1, imgCoords.y));
     ball.vel.y +=
-      getBrightness(imgCoords.x, imgCoords.y) -
-      getBrightness(imgCoords.x, imgCoords.y + 1);
+      ballSpeed *
+      (getBrightness(imgCoords.x, imgCoords.y) -
+        getBrightness(imgCoords.x, imgCoords.y + 1));
     ball.vel.x *= 1 - friction;
     ball.vel.y *= 1 - friction;
     if (
