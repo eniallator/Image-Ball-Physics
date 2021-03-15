@@ -1,0 +1,10 @@
+html,
+body {
+  height: 100%;
+  color: black;
+}
+
+#canvas {
+  width: 100%;
+  height: calc(100% - 6px);
+}

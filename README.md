@@ -1,3 +1,3 @@
-# Web-Animation-Template
+# Image Ball Physics
 
-My template repository for creating web animations
+Simulating balls rolling across an image based on the brightnesses of the pixels.
