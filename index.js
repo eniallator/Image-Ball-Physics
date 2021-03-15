@@ -18,7 +18,10 @@ let prevTime = new Date().getTime();
 const balls = new Array(numBalls).fill().map(() => {
   return {
     vel: { x: 0, y: 0 },
-    pos: { x: Math.random() * canvas.width, y: Math.random() * canvas.height },
+    pos: {
+      x: Math.random() * (canvas.width - ballRadius * 2) + ballRadius,
+      y: Math.random() * (canvas.height - ballRadius * 2) + ballRadius,
+    },
     waitingTime: 0,
   };
 });
@@ -107,8 +110,8 @@ function run() {
     if (ball.waitingTime > maxWait) {
       ball.waitingTime = 0;
       ball.pos = {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
+        x: Math.random() * (canvas.width - ballRadius * 2) + ballRadius,
+        y: Math.random() * (canvas.height - ballRadius * 2) + ballRadius,
       };
       ball.vel = { x: 0, y: 0 };
     }
