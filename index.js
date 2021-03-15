@@ -73,11 +73,11 @@ function run() {
     };
 
     ball.vel.x +=
-      getBrightness(imgCoords.x + 1, imgCoords.y) -
-      getBrightness(imgCoords.x, imgCoords.y);
+      getBrightness(imgCoords.x, imgCoords.y) -
+      getBrightness(imgCoords.x + 1, imgCoords.y);
     ball.vel.y +=
-      getBrightness(imgCoords.x, imgCoords.y + 1) -
-      getBrightness(imgCoords.x, imgCoords.y);
+      getBrightness(imgCoords.x, imgCoords.y) -
+      getBrightness(imgCoords.x, imgCoords.y + 1);
     ball.vel.x *= 1 - friction;
     ball.vel.y *= 1 - friction;
     if (
